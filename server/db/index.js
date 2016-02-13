@@ -4,13 +4,14 @@ var path = require('path');
 var chalk = require('chalk');
 var mongoose = require('mongoose');
 
+var db;
 
 if (process.env.MODE === 'testing') {
     console.log('Connecting to DB in Testing Mode');
-    mongoose.connect('mongodb://localhost/insider-testing');
+    db = mongoose.connect('mongodb://localhost/insider-testing').connection;
 } else {
     console.log('Connecting to DB in Production Mode')
-    mongoose.connect('mongodb://localhost/insider');
+    db = mongoose.connect('mongodb://localhost/insider').connection;
 }
 
 require('./models');

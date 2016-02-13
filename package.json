@@ -2,10 +2,10 @@
   "name": "insider",
   "version": "0.0.1",
   "description": "App for anonymous diversity ratings of tech companies",
-  "main": "server/app/index.js",
+  "main": "server/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "sudo nodemon"
+    "start": "nodemon"
   },
   "repository": {
     "type": "git",
