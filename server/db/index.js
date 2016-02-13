@@ -2,11 +2,16 @@
 var Promise = require('bluebird');
 var path = require('path');
 var chalk = require('chalk');
-
-var DATABASE_URI = require(path.join(__dirname, '../env')).DATABASE_URI;
-
 var mongoose = require('mongoose');
-var db = mongoose.connect(DATABASE_URI).connection;
+
+
+if (process.env.MODE === 'testing') {
+    console.log('Connecting to DB in Testing Mode');
+    mongoose.connect('mongodb://localhost/insider-testing');
+} else {
+    console.log('Connecting to DB in Production Mode')
+    mongoose.connect('mongodb://localhost/insider');
+}
 
 // Require our models -- these should register the model into mongoose
 // so the rest of the application can simply call mongoose.model('User')
