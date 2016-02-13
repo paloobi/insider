@@ -13,9 +13,6 @@ if (process.env.MODE === 'testing') {
     mongoose.connect('mongodb://localhost/insider');
 }
 
-// Require our models -- these should register the model into mongoose
-// so the rest of the application can simply call mongoose.model('User')
-// anywhere the User model needs to be used.
 require('./models');
 
 var startDbPromise = new Promise(function (resolve, reject) {
@@ -24,6 +21,7 @@ var startDbPromise = new Promise(function (resolve, reject) {
 });
 
 console.log(chalk.yellow('Opening connection to MongoDB . . .'));
+
 startDbPromise.then(function () {
   console.log(chalk.green('MongoDB connection opened!'));
 });

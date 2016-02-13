@@ -1,9 +1,6 @@
 'use strict';
 var router = require('express').Router();
 
-router.get('/', function(req, res, next) {
-
-});
 
 router.get('/companies', function(req, res, next) {
 
