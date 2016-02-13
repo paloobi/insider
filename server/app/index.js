@@ -25,10 +25,6 @@ app.use(require('morgan')('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-
-app.use(require('./routes'));
-
-
 // app.use(function (req, res, next) {
 //     if (path.extname(req.path).length > 0) {
 //         res.status(404).end();
@@ -37,9 +33,12 @@ app.use(require('./routes'));
 //     }
 // });
 
-app.get('/*', function (req, res) {
-    res.sendFile(rootPath + '/browser/index.html');
+app.get('/', function (req, res) {
+    res.sendFile(__dirname + rootPath + '/browser/index.html');
 });
+
+app.use(require('./routes'));
+
 
 // Error catching endware.
 app.use(function (err, req, res, next) {
