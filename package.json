@@ -19,6 +19,7 @@
   "homepage": "https://github.com/paloobi/insider",
   "dependencies": {
     "angular": "^1.5.0",
-    "bootswatch": "^3.3.6"
+    "bootswatch": "^3.3.6",
+    "express": "^4.13.4"
   }
 }
