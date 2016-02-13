@@ -1,0 +1,24 @@
+{
+  "name": "insider",
+  "version": "0.0.1",
+  "description": "App for anonymous diversity ratings of tech companies",
+  "main": "server/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/paloobi/insider.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paloobi/insider/issues"
+  },
+  "homepage": "https://github.com/paloobi/insider",
+  "dependencies": {
+    "angular": "^1.5.0",
+    "bootswatch": "^3.3.6"
+  }
+}
